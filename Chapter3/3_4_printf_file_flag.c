@@ -10,7 +10,7 @@
 	read write
 	$./3_4_printf_file_flag 0 <  /dev/tty  
 	read only
-	$./3_4_printf_file_flag 1 >  temp.foo
+	$./3_4_printf_file_flag 1 >  temp.foo  
 	$cat temp.foo 
 	write only
 	$./3_4_printf_file_flag 2 >>  temp.foo 
@@ -27,6 +27,8 @@
 
 	Analyse:
 	5<>temp.foo is meaning that opening the file temp.foo with mode read and write
+	$./3_4_printf_file_flag 1 >  temp.foo is meaning that: the file temp.foo is existed,
+	so the file be created by the write only way,and the fd 1 is redicted to the file.
 */
 
 #include "../include/apue.h"
