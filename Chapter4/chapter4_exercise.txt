@@ -1,0 +1,39 @@
+/*
+	The Chapter4 exercise
+*/
+
+4.2
+	$umask 777
+	$date > test_umask 
+	-bash: test_umask: 权限不够
+	$ll test_umask 
+	---------- 1 gzzhougang gzzhougang 0  1月 13 21:13 test_umask
+
+4.3
+	$chmod u+r test_umask
+	$chmod u+w test_umask     
+	$date > test_umask    
+	$cat test_umask 
+	2014年 01月 13日 星期一 21:15:48 HKT
+	$chmod u-r test_umask      
+	$cat test_umask       
+	cat: test_umask: 权限不够
+
+
+4.4
+	$rm bar foo
+	$date > foo
+	$date > bar
+	$ls -l foo bar
+	-rw-r--r-- 1 gzzhougang gzzhougang 37  1月 13 21:24 bar
+	-rw-r--r-- 1 gzzhougang gzzhougang 37  1月 13 21:24 foo
+	$chmod a-r bar foo
+	$ls -l foo bar
+	--w------- 1 gzzhougang gzzhougang 37  1月 13 21:24 bar
+	--w------- 1 gzzhougang gzzhougang 37  1月 13 21:24 foo
+	$./4_3_umask_example 
+	$ls -l foo bar
+	--w------- 1 gzzhougang gzzhougang 0  1月 13 21:25 bar
+	--w------- 1 gzzhougang gzzhougang 0  1月 13 21:25 foo
+
+	The Create function can not change the exit file access right.
