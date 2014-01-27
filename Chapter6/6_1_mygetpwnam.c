@@ -5,7 +5,7 @@
 	name=gzzhougang,passwd=x,uid=1011,gid=1011,dir=/home/gzzhougang,shell=/bin/bash
 
 	Analyse:
-	/use/include/pwd.h
+	/usr/include/pwd.h
 	struct passwd
 	{
 	  char *pw_name;		
