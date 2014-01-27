@@ -3,6 +3,7 @@
 	Example:
 	$./print_utsname 
 	sysname:Linux,nodename:onlinegame10-63,release:2.6.32-5-amd64,version:#1 SMP Fri May 10 08:43:19 UTC 2013,machine:x86_64
+	domainname:(none)
 	$uname -a
 	Linux onlinegame10-63 2.6.32-5-amd64 #1 SMP Fri May 10 08:43:19 UTC 2013 x86_64 GNU/Linux
 
@@ -19,5 +20,11 @@ int main(void)
 
 	printf("sysname:%s,nodename:%s,release:%s,version:%s,machine:%s\n",
 			sysinfo.sysname,sysinfo.nodename,sysinfo.release,sysinfo.version,sysinfo.machine);
+# ifdef __USE_GNU
+	printf("domainname:%s\n",sysinfo.domainname);
+# else
+	printf("domainname:%s\n",sysinfo.__domainname);
+# endif
+
 	exit(0);
 }
