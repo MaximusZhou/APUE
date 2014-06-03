@@ -1,6 +1,7 @@
 /*
 	
 	Example:
+	$gcc -Wall 8_2_vfork_example.c  ../lib/error.c  -o 8_2_vfork_example
 	$./8_2_vfork_example 
 	before fork
 	pid = 41437, glob = 6, var = 88
